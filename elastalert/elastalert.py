@@ -688,7 +688,7 @@ class ElastAlerter():
         # Use buffer for normal queries, or run_every increments otherwise
         # or, if scan_entire_timeframe, use timeframe
 
-        if not rule.get('use_count_query') and not rule.get('use_terms_query'):
+        if not rule.get('use_count_query'):
             if not rule.get('scan_entire_timeframe'):
                 buffer_time = rule.get('buffer_time', self.buffer_time)
                 buffer_delta = endtime - buffer_time
