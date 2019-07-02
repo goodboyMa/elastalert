@@ -495,13 +495,13 @@ class ElastAlerter():
             if not rule['five']:
                 res = self.current_es.search(
                     index=index,
-                    doc_type=rule['doc_type'],
+                    doc_type=None,
                     body=query,
                     search_type='count',
                     ignore_unavailable=True
                 )
             else:
-                res = self.current_es.search(index=index, doc_type=rule['doc_type'], body=query, size=0, ignore_unavailable=True)
+                res = self.current_es.search(index=index, doc_type=None, body=query, size=0, ignore_unavailable=True)
         except ElasticsearchException as e:
             # Elasticsearch sometimes gives us GIGANTIC error messages
             # (so big that they will fill the entire terminal buffer)

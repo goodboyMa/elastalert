@@ -1,5 +1,11 @@
 # Change Log
 
+# v0.1.39 - Roy@Atom Changed
+
+### Fixed
+- Remove the "doc_type" param in get_hits_term function
+
+
 # v0.1.39
 
 ### Added
